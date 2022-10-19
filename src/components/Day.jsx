@@ -33,7 +33,7 @@ export default class Day extends React.Component {
             (isCurrentMonth ? "" : " different-month") +
             ` ${color}`
           }
-          onClick={isCurrentMonth ? this.handleShowModal : ""}
+          onClick={isCurrentMonth ? this.handleShowModal : null}
         >
           {number}
         </span>

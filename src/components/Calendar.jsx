@@ -10,7 +10,7 @@ export default class Calendar extends React.Component {
     super(props);
 
     this.state = {
-      month: moment("01.2022", moment.defaultFormat),
+      month: moment("02.2022", moment.defaultFormat),
     };
   }
 
