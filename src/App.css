@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.vertical-center {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background: #EFEFEF;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.calendar {
+  display: block;
+  background: #FFFFFF;
+  width: 320px;
+  border: solid 1px #CCCCCC;
+  margin: 10px auto;
+  box-shadow: 0 0 15px 0 #C0C0C0;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 10px;
+}
+.calendar header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  cursor: default;
+  font-size: 1.4rem;
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.calendar header .month-display {
+  align-items: center;
+  height: 40px;
+  background: #00AB55;
+  width: 150px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow:0 5px 5px 0 #00AB55
+}
+.calendar header .month-label {
+  flex: 1;
+}
+.calendar .day-names {
+  color: #C0C0C0;
+  font-weight: bold;
+  cursor: default;
+  font-size: 1.2rem;
+}
+.calendar .day-names .day {
+  cursor: default;
+}
+.calendar .day-names .day:hover {
+  background: inherit;
+}
+.calendar .day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius:50%;
+  margin: 5px;
+}
+.calendar .day:hover {
+  background: #EFEFEF;
+}
+.calendar .day:first-child {
+  border-left: none;
+}
+.calendar .day.different-month {
+  opacity: 0;
+  cursor:default;
+}
+.calendar .day:last-child {
+  color: red;
+}
+
+.day.sat{
+  opacity: 0.6;
+}
+
+.day.sat:hover{
+  background-color:transparent !important;
+}
+
+.calendar .day:last-child:hover {
+  background-color:rgba(255, 0, 0, 0.1)
+}
+
+.calendar .day.today {
+  background: #dceaf8;
+}
+
+.calendar .day.yellow {
+  background: rgb(235, 219, 0);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.calendar .day.yellow:hover{
+  box-shadow: rgb(235, 219, 0) 0px 5px 20px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calendar .day.green {
+  background: #00AB55;
+  color: #FFFFFF;
+}
+
+.calendar .day.green:hover{
+  box-shadow: #00AB55 0px 5px 20px 0px;
+}
+.calendar .day.grey {
+  background: #C0C0C0;
+  color: #FFFFFF;
+}
+.calendar .day.grey:hover{
+  box-shadow: #C0C0C0 0px 5px 20px 0px;
+}
+
+.modal{
+  background-color:rgba(128, 128, 128, 0.5);
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  backdrop-filter:blur(2px);
+  height: 100%;
+}
+.modalContent{
+  border:1px solid #ccc;
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color:white;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
+
+.closeBtn{
+  border:none;
+  outline:none;
+  background: #00AB55;
+  color: #EFEFEF;
+  padding: 5px;
+  float: right;
+  cursor: pointer;
+  border-radius:5px;
+  transition: all 0.5s ease;
+}
+
+.closeBtn:hover{
+  background: rgb(1, 156, 79);
 }
